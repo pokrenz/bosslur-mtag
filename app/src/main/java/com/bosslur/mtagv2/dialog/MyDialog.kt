@@ -13,6 +13,7 @@ object MyDialog {
             .setTitle(title)
             .setMessage(message)
             .show()
+
     }
 
     fun showProgressDialog(context: Context?){
