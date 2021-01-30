@@ -53,7 +53,7 @@ class AttendanceFragment : Fragment() , OnMapReadyCallback {
                         .title("Marker di sydney gaes")
         )
         //map?.animateCamera(CameraUpdateFactory.zoomTo(10f))
-        map?.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,10f))
+        map?.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,20f))
 
     }
 

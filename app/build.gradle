@@ -17,7 +17,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         //BASE URL
-        buildConfigField "String" , "BASE_URL", "\"http://localhost:8000/api\""
+        buildConfigField "String" , "BASE_URL", "\"https://api.juraganlaptopjabodetabek.com/api/\""
     }
     buildFeatures {
         viewBinding true
