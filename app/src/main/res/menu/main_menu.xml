@@ -12,8 +12,8 @@
         android:icon="@drawable/ic_baseline_location_on_24"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_person"
-        android:title="Person"
+        android:id="@+id/action_profile"
+        android:title="Profile"
         android:icon="@drawable/ic_baseline_person_24"
         app:showAsAction="always" />
 
