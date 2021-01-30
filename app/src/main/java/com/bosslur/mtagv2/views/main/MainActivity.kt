@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                     openFragment(AttendanceFragment())
                     return@setOnNavigationItemSelectedListener  true
                 }
-                R.id.action_person -> {
+                R.id.action_profile -> {
                     openFragment(ProfileFragment())
                     return@setOnNavigationItemSelectedListener  true
                 }
