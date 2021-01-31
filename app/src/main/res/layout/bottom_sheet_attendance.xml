@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/btmSheetAttendance"
     android:background="@android:color/white"
     android:paddingHorizontal="20dp"
     android:paddingTop="20dp"
@@ -78,7 +79,8 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/bg_capture_photo"
         android:paddingVertical="2dp"
-        />
+        android:clickable="true"
+        android:focusable="true" />
     <Button
         android:id="@+id/btnCheckinAttendance"
         android:layout_width="match_parent"

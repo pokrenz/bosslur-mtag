@@ -4,4 +4,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="email_kosong">Isi Emailnya kawan</string>
     <string name="format_email_salah">Format Emailnya salah kawan</string>
+    <string name="search_location">Sedang memindai lokasi</string>
+    <string name="success_check_in">Check In Sukses</string>
+    <string name="success_check_out">Check Out sukses</string>
+    <string name="alert">Alert</string>
+    <string name="something_wrong">Ada masalah</string>
+    <string name="your_already_present">Kamu sudah Check in</string>
+    <string name="check_out">Check Out</string>
+    <string name="check_in">Check In</string>
 </resources>
