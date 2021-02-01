@@ -1,9 +1,6 @@
 package com.bosslur.mtagv2.networking
 
-import com.bosslur.mtagv2.model.AttendanceResponse
-import com.bosslur.mtagv2.model.ForgotPasswordResponse
-import com.bosslur.mtagv2.model.HistoryResponse
-import com.bosslur.mtagv2.model.LoginResponse
+import com.bosslur.mtagv2.model.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 
@@ -34,4 +31,8 @@ interface MtagApiServices {
                              @Query("from") fromDate: String,
                              @Query("to") toDate: String
     ): Call<HistoryResponse>
+
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    @POST("auth/logout")
+    fun logoutRequest(@Header("Authorization") token: String): Call<LogoutResponse>
 }

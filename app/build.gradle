@@ -18,6 +18,7 @@ android {
 
         //BASE URL
         buildConfigField "String" , "BASE_URL", "\"https://api.juraganlaptopjabodetabek.com/api/\""
+        buildConfigField "String", "BASE_IMAGE_URL", "\"https://api.juraganlaptopjabodetabek.com/storage/profile/\""
     }
     buildFeatures {
         viewBinding true

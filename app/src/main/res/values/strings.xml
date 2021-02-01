@@ -13,4 +13,8 @@
     <string name="check_out">Check Out</string>
     <string name="check_in">Check In</string>
     <string name="default_text">-</string>
+    <string name="logout">Logout</string>
+    <string name="are_you_sure">Kamu yakin mau logout ?</string>
+    <string name="yes">Yakin</string>
+    <string name="enggak">Enggak</string>
 </resources>
