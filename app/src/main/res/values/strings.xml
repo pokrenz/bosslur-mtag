@@ -12,4 +12,5 @@
     <string name="your_already_present">Kamu sudah Check in</string>
     <string name="check_out">Check Out</string>
     <string name="check_in">Check In</string>
+    <string name="default_text">-</string>
 </resources>

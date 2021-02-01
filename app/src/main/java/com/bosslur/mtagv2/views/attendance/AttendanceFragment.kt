@@ -6,8 +6,10 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context.LOCATION_SERVICE
 import android.content.Intent
+import android.content.Intent.*
 import android.content.IntentSender
 import android.content.pm.PackageManager
+import android.hardware.camera2.CameraCaptureSession
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
@@ -57,7 +59,6 @@ import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
-
 
 class AttendanceFragment : Fragment() , OnMapReadyCallback {
     companion object{
@@ -232,7 +233,7 @@ class AttendanceFragment : Fragment() , OnMapReadyCallback {
                                 response: Response<AttendanceResponse>
                         ) {
                             MyDialog.hideDialog()
-                            if (response.isSuccessful){
+                            if (response.isSuccessful) {
                                 val attendanceResponse = response.body()
                                 currentPhotoPath = ""
                                 bindingBottomSheet?.ivPhoto?.setImageDrawable(
@@ -240,13 +241,14 @@ class AttendanceFragment : Fragment() , OnMapReadyCallback {
                                 )
                                 bindingBottomSheet?.ivPhoto?.adjustViewBounds = false
                                 checkIfAlreadyPresent()
-                                if (type == "in"){
+                                if (type == "in") {
                                     MyDialog.dynamicDialog(context, getString(R.string.success_check_in), attendanceResponse?.message.toString())
-                                }else{
+                                } else {
                                     MyDialog.dynamicDialog(context, getString(R.string.success_check_out), attendanceResponse?.message.toString())
                                 }
-                            }else{
-                                MyDialog.dynamicDialog(context, getString(R.string.alert), getString(R.string.something_wrong))
+                            } else {
+                                MyDialog.dynamicDialog(context, getString(R.string.alert), "${token} failed")
+                                Log.e(TAG, "Error: Params ${params}")
                             }
                         }
 
@@ -393,7 +395,8 @@ class AttendanceFragment : Fragment() , OnMapReadyCallback {
     @SuppressLint("QueryPermissionsNeeded")
     private fun openCamera() {
         context?.let { context ->
-            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE_SECURE)
+            cameraIntent.type = "image/*"
             if(cameraIntent.resolveActivity(context.packageManager) != null){
                 val photoFile = try {
                     createImageFile()

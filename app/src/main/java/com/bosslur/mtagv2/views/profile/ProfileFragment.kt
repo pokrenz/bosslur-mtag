@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.bosslur.mtagv2.R
 import com.bosslur.mtagv2.databinding.FragmentProfileBinding
+import com.bosslur.mtagv2.hawkstorage.HawkStorage
 import com.bosslur.mtagv2.views.changepassword.ChangePasswordActivity
 import com.bosslur.mtagv2.views.login.LoginActivity
 import com.bosslur.mtagv2.views.main.MainActivity
@@ -42,6 +43,7 @@ class ProfileFragment : Fragment() {
         }
 
         binding?.btnLogout?.setOnClickListener {
+            val token = HawkStorage.instance(context).deleteAll()
             context?.startActivity<LoginActivity>()
             (activity as MainActivity).finishAffinity()
         }
